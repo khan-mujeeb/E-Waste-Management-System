@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <title>Javascript Chat Bot Demo</title>
+    <style>
+        body {
+            color: #333;
+            background-image: url(data:image/png;base64,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);
+            font: 13px helvetica,arial,freesans,clean,sans-serif;
+        }
+        #demo {
+            /*background-color: #ffffff;*/
+            width: 80%;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 20px;
+
+            background-color: #F8F8F8;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 10px #999;
+            line-height: 1.4em;
+            font: 13px helvetica,arial,freesans,clean,sans-serif;
+            color: black;
+        }
+        #demo input {
+            padding: 8px;
+            font-size: 14px;
+            border: 1px solid #ddd;
+            width: 400px;
+        }
+        .button {
+            display: inline-block;
+            background-color: darkcyan;
+            color: #fff;
+            padding: 8px;
+            cursor: pointer;
+            float: right;
+        }
+        #chatBotCommandDescription {
+            display: none;
+            margin-bottom: 20px;
+        }
+        input:focus {
+            outline: none;
+        }
+        .chatBotChatEntry {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<script src="../js/chatbot.js"></script>
+<link rel="stylesheet" type="text/css" href="../css/chatbot.css" />
+
+<div id="demo">
+    <div id="chatBotCommandDescription"></div>
+    <input id="humanInput" type="text" placeholder="Say something" />
+
+    <div class="button" onclick="if (!ChatBot.playConversation(sampleConversation,4000)) {alert('conversation already running');};"></div>
+    <div class="button" onclick="$('#chatBotCommandDescription').slideToggle();" style="margin-right:10px">What can I say?</div>
+
+    <div style="clear: both;">&nbsp;</div>
+
+    <div id="chatBot">
+        <div id="chatBotThinkingIndicator"></div>
+        <div id="chatBotHistory"></div>
+    </div>
+</div>
+
+
+<script>
+    var sampleConversation = [
+        "Hi",
+        "My name is Fry",
+        "Where is China?",
+        "What is the population of China?",
+        "Bye"
+    ];
+    var config = {
+        botName: 'Duck Duck Go Bot',
+        inputs: '#humanInput',
+        inputCapabilityListing: true,
+        engines: [ChatBot.Engines.duckduckgo()],
+        normalizer: [function( text ) {
+            return text.replace('!' , '');
+        } , 'trim' ],
+        addChatEntryCallback: function(entryDiv, text, origin) {
+            entryDiv.delay(200).slideDown();
+        }
+    };
+    ChatBot.init(config);
+    ChatBot.setBotName("Helper");
+    ChatBot.addPattern("^hi$", "response", "Hello, how i can help you", undefined, "Say 'Hi' to be greeted back.");
+
+    ChatBot.addPattern("^kkrh$", "response", "Help", undefined, "Say 'Hi' to be greeted back.");
+
+    ChatBot.addPattern("^covid19 symptoms$", "response", "Signs and symptoms of coronavirus disease 2019 (COVID-19) may appear two to 14 days after exposure. This time after exposure and before having symptoms is called the incubation period. You can still spread COVID-19 before you have symptoms, called presymptomatic. Common signs and symptoms can include: <ul> <li>Fever <li>cough</li><li>tiredness</li></ul>", undefined, "Say 'Hi' to be greeted back.");
+
+    ChatBot.addPattern("^covid19 self checker$", "response", " please vist on <br> https://www.cdc.gov/coronavirus/2019-ncov/symptoms-testing/coronavirus-self-checker.html ", undefined, "Say 'Hi' to be greeted back.");
+
+    ChatBot.addPattern("^is the covid19 vaccine safe$", "response", "Yes it is safe. You may experience fever,weakness after getting vaccinated but it happens. Rarely it elicit severe reaction in the body. But still we cannot neglect its efficacy. So you should get it.", undefined, "Say 'Hi' to be greeted back.");
+
+    ChatBot.addPattern("^where should i register for covid19 vaccination$", "response", "You can log into the CoWIN portal using the link www.cowin.gov.in and click on the “Register/Sign In yourself” tab to register for COVID-19 vaccination", undefined, "Say 'Hi' to be greeted bac");
+
+    ChatBot.addPattern("^vaccination centre near me$", "response", "Some of vaccination centers are <br>  <ul> <li>Sai Umbrella, Sambhajinagar Hospital</li> <li>Ordnance Factory Hospital Dehu road</li> <li>Sector NO.29, Ravet</li>  <li>KPMKM hospital, Akurdi </li> </ul>", undefined, "Say 'Hi' to be greeted back.");
+
+    ChatBot.addPattern("^precautions for coronavirus$", "response", "<ul><li>Wash your hands frequently</li><li>Protect yourself this flu season</li><li>Avoid close contact</li><li>Cover your nose and mouth when around others</li><li>Clean and disinfect</li></ul>", undefined, "Say 'Hi' to be greeted back.");
+
+    ChatBot.addPattern("^i have ear related issue$", "response", "contact to our audiologist", undefined, "Say 'Hi' to be greeted back.");
+
+    ChatBot.addPattern("^toothache problem$", "response", "our Dentist will make you fine", undefined, "Say 'Hi' to be greeted back.");
+
+    ChatBot.addPattern("^i am looking for pyschiatrist$", "response", "you can confirm your appointment in login page", undefined, "Say 'Hi' to be greeted back.");
+
+    ChatBot.addPattern("^suffering from knee pain$", "response", " contact to our Orthopedit", undefined, "Say 'Hi' to be greeted back.");
+
+
+
+
+
+
+
+    ChatBot.addPattern("^bye$", "response", "See you later buddy", undefined, "Say 'Bye' to end the conversation.");
+    ChatBot.addPattern("(?:my name is|I'm|I am) (.*)", "response", "hi $1, thanks for talking to me today", function (matches) {
+        ChatBot.setHumanName(matches[1]);
+    },"Say 'My name is [your name]' or 'I am [name]' to be called that by the bot");
+    ChatBot.addPattern("(what is the )?meaning of life", "response", "42", undefined, "Say 'What is the meaning of life' to get the answer.");
+    ChatBot.addPattern("compute ([0-9]+) plus ([0-9]+)", "response", undefined, function (matches) {
+        ChatBot.addChatEntry("That would be "+(1*matches[1]+1*matches[2])+".","bot");
+    },"Say 'compute [number] plus [number]' to make the bot your math monkey");
+
+</script>
+</body>
+</html>
