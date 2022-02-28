@@ -7,3 +7,4 @@
 
 ## Azure Technology used
 1. Azure static page
+2. Azure web app
